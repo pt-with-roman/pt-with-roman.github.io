@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="physical therapy, healing, los angeles">
+<title>Hands on Healing with Roman | Manual Physical Therapy</title>
+<meta name="description" content="Hands-on physical therapy and active massage therapy with Roman. Skilled manual work that relieves pain and restores movement — no take-home exercise routines required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --linen:#FEFDFB;
+    --linen-deep:#F5EFE4;
+    --white:#FFFFFF;
+    --sky:#6E93AC;
+    --sky-deep:#3C5C70;
+    --sky-pale:#DCE7EC;
+    --sage:#8CA282;
+    --sage-deep:#5D7053;
+    --sand:#C9B594;
+    --ink:#2A2E2C;
+    --ink-soft:#59645F;
+    --yelp-red:#D32323;
+    --yelp-red-dark:#A31414;
+    --shadow: 0 18px 40px -20px rgba(42,46,44,0.35);
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+    --serif: "Source Serif 4", Georgia, serif;
+    --sans: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+ 
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+  body{
+    margin:0;
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--linen);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:var(--serif);
+    font-weight:600;
+    line-height:1.15;
+    margin:0 0 0.5em 0;
+    color:var(--sky-deep);
+  }
+  p{margin:0 0 1em 0; max-width:62ch;}
+  a{color:inherit;}
+  img,svg{display:block; max-width:100%;}
+  section{padding: 96px 6vw;}
+  .container{max-width:1180px; margin:0 auto;}
+  ::selection{background:var(--sage); color:var(--white);}
+ 
+  :focus-visible{
+    outline: 3px solid var(--sky-deep);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+ 
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:0.98rem;
+    padding:14px 28px;
+    border-radius:999px;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background: linear-gradient(135deg, var(--sky-deep), var(--sky));
+    color: var(--white);
+    box-shadow: 0 12px 26px -10px rgba(60,92,112,0.55);
+  }
+  .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 16px 30px -10px rgba(60,92,112,0.65);}
+  .btn-primary:active{ transform: translateY(0px) scale(0.98); }
+  .btn-ghost{
+    background: transparent;
+    color: var(--sky-deep);
+    border-color: var(--sky-deep);
+  }
+  .btn-ghost:hover{ background: var(--sky-deep); color:var(--white); transform: translateY(-2px);}
+  .btn-sm{ padding:9px 18px; font-size:0.85rem; }
+ 
+  header{
+    position: sticky; top:0; z-index:100;
+    background: rgba(60,92,112,0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(28,44,54,0.4);
+  }
+  nav{
+    max-width:1180px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 6vw;
+  }
+  .brand{
+    font-family:var(--serif); font-weight:600; font-size:1.28rem; color:var(--white);
+    text-decoration:none; letter-spacing:0.2px;
+  }
+  .brand em{ font-style: italic; font-weight:500; color:var(--sky-pale);}
+  .nav-links{ display:flex; align-items:center; gap:32px; list-style:none; margin:0; padding:0; }
+  .nav-links a{ text-decoration:none; color:var(--sky-pale); font-weight:600; font-size:0.96rem; }
+  .nav-links a:hover{ color:var(--white); }
+  .nav-cta{ display:flex; align-items:center; gap:20px; }
+  .menu-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
+  .menu-toggle span{ display:block; width:24px; height:2px; background:var(--white); margin:5px 0; border-radius:2px; }
+ 
+  @media (max-width: 860px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--white);
+      flex-direction:column; align-items:flex-start;
+      padding:20px 6vw; gap:18px;
+      border-bottom:1px solid rgba(60,92,112,0.12);
+      display:none;
+    }
+    .nav-links.open{ display:flex; }
+    .nav-links a{ color: var(--sky-deep); }
+    .nav-links a:hover{ color: var(--sage-deep); }
+    .menu-toggle{ display:block; }
+    .nav-cta .btn-primary{ display:none; }
+  }
+ 
+  .hero{
+    padding-top:70px;
+    display:grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-block;
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--sage-deep);
+    background: rgba(140,162,130,0.15);
+    padding:6px 16px;
+    border-radius:999px;
+    margin-bottom:20px;
+  }
+  .hero h1{
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    max-width:14ch;
+  }
+  .hero .lede{
+    font-size:1.12rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin-bottom: 30px;
+  }
+  .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; }
+  .hero-art{
+    animation: rise 1.1s ease both;
+  }
+  @keyframes rise{
+    from{ opacity:0; transform: translateY(18px) scale(0.98); }
+    to{ opacity:1; transform: translateY(0) scale(1); }
+  }
+  .hero-copy{ animation: rise 0.9s ease both; }
+ 
+  @media (max-width: 940px){
+    .hero{ grid-template-columns:1fr; padding-top:40px;}
+    .hero-art{ order:-1; max-width:340px; margin:0 auto;}
+  }
+ 
+  .marquee-wrap{
+    background: var(--linen-deep);
+    border-top: 1px solid rgba(60,92,112,0.12);
+    border-bottom: 1px solid rgba(60,92,112,0.12);
+    padding: 20px 0;
+    overflow:hidden;
+    margin-top: 30px;
+  }
+  .marquee{
+    display:flex;
+    gap:48px;
+    white-space:nowrap;
+    animation: scroll-left 32s linear infinite;
+    width:max-content;
+  }
+  .marquee-wrap:hover .marquee{ animation-play-state: paused; }
+  @keyframes scroll-left{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+  .marquee span{
+    color: var(--sky-deep);
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.15rem;
+    font-weight:600;
+  }
+  .marquee span::after{ content:"•"; margin-left:48px; color: var(--sage); font-style:normal;}
+ 
+  .section-head{ max-width:640px; margin-bottom:52px; }
+  .section-head .eyebrow{ margin-bottom:14px; }
+  .section-head p{ color:var(--ink-soft); }
+ 
+  .philosophy-grid{
+    display:grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap:28px;
+  }
+  .phil-main{
+    background: var(--sky-deep);
+    color: var(--sky-pale);
+    border-radius: var(--radius-lg);
+    padding:44px;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    min-height:380px;
+  }
+  .phil-main h3{ color:var(--white); font-size:1.6rem; }
+  .phil-main p{ color: var(--sky-pale); max-width:42ch; }
+  .phil-side{ display:flex; flex-direction:column; gap:28px; }
+  .phil-card{
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding:32px;
+    border:1px solid rgba(60,92,112,0.1);
+    flex:1;
+  }
+  .phil-card h3{ font-size:1.25rem; }
+  .phil-card p{ color:var(--ink-soft); font-size:0.98rem; }
+  @media (max-width: 860px){
+    .philosophy-grid{ grid-template-columns:1fr; }
+  }
+ 
+  .reviews-section{
+    background: var(--linen-deep);
+    border-radius: var(--radius-lg);
+    margin: 0 6vw;
+    padding: 72px 6vw;
+    width:auto;
+  }
+  .review-slider{ position:relative; max-width:760px; margin:0 auto; }
+  .review-track{ overflow:hidden; }
+  .review-slides{
+    display:flex;
+    transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+  }
+  .review-slide{ flex: 0 0 100%; padding: 4px 8px; }
+  .review-card{
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding:34px 38px;
+    box-shadow: var(--shadow);
+    text-align:center;
+    border:1px solid #E7E1D8;
+    position:relative;
+  }
+  .yelp-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background: var(--white);
+    border:1.5px solid var(--yelp-red);
+    border-radius:999px;
+    padding:5px 14px 5px 6px;
+    margin-bottom:18px;
+  }
+  .yelp-badge .burst{
+    width:22px; height:22px;
+    background: var(--yelp-red);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--white);
+    font-size:0.75rem;
+    font-weight:800;
+    font-family: Georgia, serif;
+  }
+  .yelp-badge .word{
+    font-weight:800;
+    font-size:0.95rem;
+    color:var(--yelp-red-dark);
+    font-family: Georgia, serif;
+    font-style:italic;
+    letter-spacing:0.2px;
+  }
+  .stars{ color:var(--yelp-red); font-size:1.2rem; letter-spacing:3px; margin-bottom:14px;}
+  .review-quote{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.2rem;
+    color:var(--ink);
+    margin-bottom:20px;
+  }
+  .review-name{ font-weight:700; color:var(--sky-deep); }
+  .review-source{ font-size:0.85rem; color:var(--ink-soft); }
+  .review-controls{
+    display:flex; align-items:center; justify-content:center; gap:22px;
+    margin-top:28px;
+  }
+  .review-arrow{
+    width:44px; height:44px; border-radius:50%;
+    border:2px solid var(--sky-deep);
+    background:var(--white);
+    color:var(--sky-deep);
+    font-size:1.1rem;
+    cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition: all 0.18s ease;
+  }
+  .review-arrow:hover{ background:var(--sky-deep); color:var(--white); transform:scale(1.06); }
+  .review-dots{ display:flex; gap:9px; }
+  .review-dots button{
+    width:9px; height:9px; border-radius:50%;
+    border:none; background: var(--sand); cursor:pointer; padding:0;
+    transition: all 0.2s ease;
+  }
+  .review-dots button.active{ background: var(--sky-deep); width:22px; border-radius:6px; }
+ 
+  .book-grid{
+    display:grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap:40px;
+    align-items:flex-start;
+  }
+  @media (max-width: 940px){ .book-grid{ grid-template-columns:1fr; } }
+ 
+  .calendar-card{
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    border: 1px solid rgba(60,92,112,0.1);
+  }
+  .calendar-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;}
+  .calendar-head h3{ margin:0; font-size:1.15rem; }
+  .legend{ display:flex; gap:16px; font-size:0.82rem; color:var(--ink-soft); }
+  .legend span{ display:inline-flex; align-items:center; gap:6px; }
+  .dot{ width:10px; height:10px; border-radius:50%; display:inline-block; }
+  .dot.avail{ background:var(--sage); }
+  .dot.busy{ background:var(--sand); }
+ 
+  .cal-scroll{ overflow-x:auto; padding-bottom:6px; }
+  table.calendar{ border-collapse:collapse; width:100%; min-width:620px; }
+  table.calendar th{
+    font-family:var(--sans); font-weight:700; font-size:0.8rem;
+    color:var(--sky-deep); padding:8px 6px; text-align:center;
+    border-bottom:2px solid var(--linen-deep);
+  }
+  table.calendar th .day-num{ display:block; font-weight:400; color:var(--ink-soft); font-size:0.72rem; }
+  table.calendar td{ padding:5px; text-align:center; }
+  .slot{
+    width:100%;
+    border:none;
+    border-radius:10px;
+    padding:8px 4px;
+    font-size:0.78rem;
+    font-family:var(--sans); font-weight:600;
+    cursor:pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .slot.available{ background: rgba(140,162,130,0.18); color:var(--sage-deep); }
+  .slot.available:hover{ background:var(--sage); color:var(--white); transform:translateY(-2px); box-shadow:0 8px 16px -8px rgba(93,115,83,0.6);}
+  .slot.busy{ background: rgba(201,181,148,0.22); color:var(--ink-soft); cursor:not-allowed; opacity:0.65; }
+  .cal-note{ font-size:0.85rem; color:var(--ink-soft); margin-top:16px; margin-bottom:0;}
+ 
+  .booking-card{
+    background: var(--sky-deep);
+    border-radius: var(--radius-lg);
+    padding:36px;
+    color: var(--sky-pale);
+  }
+  .booking-card h3{ color:var(--white); }
+  .field{ margin-bottom:18px; }
+  .field label{ display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px; color:var(--sky-pale); }
+  .field input, .field textarea{
+    width:100%;
+    padding:12px 14px;
+    border-radius: var(--radius-sm);
+    border: none;
+    background: rgba(255,253,249,0.95);
+    font-family:var(--sans);
+    font-size:0.95rem;
+    color:var(--ink);
+    resize:vertical;
+  }
+  .field input::placeholder, .field textarea::placeholder{ color:#9aa3a1; }
+  .field textarea{ min-height:96px; }
+  .booking-card .btn-primary{
+    width:100%;
+    background: linear-gradient(135deg, var(--sage-deep), var(--sage));
+    box-shadow: 0 12px 26px -10px rgba(93,115,83,0.6);
+  }
+  .form-note{
+    margin-top:14px;
+    font-size:0.82rem;
+    color: var(--sky-pale);
+    opacity:0.85;
+  }
+  .confirm-msg{
+    display:none;
+    margin-top:16px;
+    padding:14px 16px;
+    border-radius: var(--radius-sm);
+    background: rgba(140,162,130,0.25);
+    color: var(--white);
+    font-size:0.92rem;
+    font-weight:600;
+  }
+  .confirm-msg.show{ display:block; }
+  .confirm-msg.is-error{ background: rgba(211,35,35,0.15); color: var(--yelp-red-dark); }
+ 
+  .about-grid{
+    display:grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap:56px;
+    align-items:start;
+  }
+  @media (max-width: 900px){ .about-grid{ grid-template-columns:1fr; } }
+  .about-portrait{
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(160deg, var(--sky-pale), var(--linen-deep));
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .about-portrait .monogram{
+    font-family:var(--serif);
+    font-size:7rem;
+    color: var(--sky-deep);
+    opacity:0.85;
+  }
+  .about-portrait .ring{
+    position:absolute; border-radius:50%; border:1.5px solid rgba(60,92,112,0.25);
+  }
+  .about-portrait .ring.r1{ width:70%; height:70%; }
+  .about-portrait .ring.r2{ width:92%; height:92%; border-color: rgba(140,162,130,0.3);}
+ 
+  .about-bio p{ color:var(--ink-soft); font-size:1.03rem; }
+  .about-bio h2{ margin-bottom:0.4em; }
+  .credentials{ margin: 22px 0 0 0; padding:0; list-style:none; display:grid; gap:10px;}
+  .credentials li{ display:flex; gap:10px; align-items:flex-start; color:var(--ink-soft); font-size:0.95rem;}
+  .credentials li::before{ content:"✓"; color:var(--sage-deep); font-weight:700; }
+ 
+  .timeline{ margin-top:40px; display:grid; gap:22px; }
+  .timeline-item{ display:grid; grid-template-columns: 90px 1fr; gap:18px; }
+  .timeline-year{ font-family:var(--serif); font-weight:600; color:var(--sky-deep); font-size:1.15rem; }
+  .timeline-text{ color:var(--ink-soft); font-size:0.95rem; padding-bottom:18px; border-bottom:1px solid var(--linen-deep); }
+  .timeline-item:last-child .timeline-text{ border-bottom:none; }
+ 
+  .contact-grid{
+    display:grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap:40px;
+  }
+  @media (max-width: 940px){ .contact-grid{ grid-template-columns:1fr; } }
+  .map-card{
+    border-radius: var(--radius-lg);
+    overflow:hidden;
+    border:1px solid rgba(60,92,112,0.12);
+    min-height: 320px;
+  }
+  .map-card iframe{ width:100%; height:100%; min-height:320px; border:0; display:block; }
+  .contact-info{ margin-top:24px; display:grid; gap:14px; }
+  .contact-info .row{ display:flex; gap:12px; align-items:flex-start; }
+  .contact-info .label{ font-weight:700; color:var(--sky-deep); min-width:76px; font-size:0.92rem; }
+  .contact-info .value{ color:var(--ink-soft); font-size:0.95rem; }
+ 
+  .contact-form-card{
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding:36px;
+    border:1px solid rgba(60,92,112,0.1);
+  }
+  .contact-form-card .field input, .contact-form-card .field textarea{
+    background: var(--linen);
+    color:var(--ink);
+  }
+  .contact-form-card .field label{ color:var(--sky-deep); }
+  .contact-form-card .btn-primary{ width:100%; }
+  .contact-form-card .confirm-msg{ background: rgba(140,162,130,0.22); color: var(--sage-deep); }
+  .contact-form-card .confirm-msg.is-error{ background: rgba(211,35,35,0.12); color: var(--yelp-red-dark); }
+ 
+  footer{
+    background: var(--sky-deep);
+    color: var(--sky-pale);
+    padding: 48px 6vw 28px;
+  }
+  .footer-inner{
+    max-width:1180px; margin:0 auto;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;
+  }
+  .footer-inner .brand{ color:var(--white); }
+  .footer-inner .brand em{ color: var(--sage); }
+  footer .fine{ font-size:0.82rem; color: rgba(220,231,236,0.7); margin-top:22px; text-align:center; }
+ 
+  .divider-space{ height:8px; }
+</style>
+</head>
+<body>
+ 
+<header>
+  <nav>
+    <a href="#home" class="brand">Hands on Healing <em>with Roman</em></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#booking" class="btn btn-primary btn-sm" style="display:inline-flex;">Book a Session</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#booking" class="btn btn-primary btn-sm">Book a Session</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+ 
+<main id="home">
+ 
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">Manual Physical Therapy &amp; Massage</span>
+      <h1>Hands-On Healing, No Homework Required</h1>
+      <p class="lede">Roman treats pain and restricted movement with skilled, active hands-on work — deep tissue technique, myofascial release, and manual therapy done entirely on the table. You leave feeling better. No exercise sheets to take home.</p>
+      <div class="hero-ctas">
+        <a href="#booking" class="btn btn-primary">Book a Session</a>
+        <a href="#about" class="btn btn-ghost">Meet Roman</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="240" cy="240" r="230" fill="var(--sky-pale)" opacity="0.5"/>
+        <circle cx="240" cy="240" r="180" fill="none" stroke="var(--sage)" stroke-width="1.5" opacity="0.55"/>
+        <circle cx="240" cy="240" r="130" fill="none" stroke="var(--sky)" stroke-width="1.5" opacity="0.55"/>
+        <g transform="translate(240,255)">
+          <ellipse cx="0" cy="30" rx="58" ry="66" fill="var(--white)" stroke="var(--sky-deep)" stroke-width="3"/>
+          <g fill="var(--white)" stroke="var(--sky-deep)" stroke-width="3" stroke-linecap="round">
+            <rect x="-52" y="-46" width="20" height="70" rx="10" transform="rotate(-18 -42 -11)"/>
+            <rect x="-26" y="-72" width="20" height="86" rx="10" transform="rotate(-6 -16 -29)"/>
+            <rect x="2" y="-78" width="20" height="90" rx="10"/>
+            <rect x="30" y="-68" width="20" height="80" rx="10" transform="rotate(9 40 -28)"/>
+            <rect x="54" y="-38" width="18" height="58" rx="9" transform="rotate(28 63 -9)"/>
+          </g>
+          <ellipse cx="0" cy="30" rx="58" ry="66" fill="none" stroke="var(--sky-deep)" stroke-width="3"/>
+        </g>
+        <circle cx="90" cy="110" r="7" fill="var(--sage)"/>
+        <circle cx="400" cy="140" r="5" fill="var(--sand)"/>
+        <circle cx="380" cy="360" r="8" fill="var(--sky)"/>
+      </svg>
+    </div>
+  </section>
+ 
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee">
+      <span>Deep Tissue Massage</span>
+      <span>Myofascial Release</span>
+      <span>Active Release Technique</span>
+      <span>Trigger Point Therapy</span>
+      <span>Manual Traction</span>
+      <span>Therapeutic Massage</span>
+      <span>Deep Tissue Massage</span>
+      <span>Myofascial Release</span>
+      <span>Active Release Technique</span>
+      <span>Trigger Point Therapy</span>
+      <span>Manual Traction</span>
+      <span>Therapeutic Massage</span>
+    </div>
+  </div>
+ 
+  <section id="philosophy">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How It Works</span>
+        <h2>A Different Kind of Physical Therapy</h2>
+        <p>Most PT plans hand you a folder of exercises. Roman's approach puts the work into his hands, not your evenings — so healing happens during the session, not after it.</p>
+      </div>
+      <div class="philosophy-grid">
+        <div class="phil-main">
+          <h3>Hands-On, From Start to Finish</h3>
+          <p>Every session is skilled manual therapy — active, targeted massage and joint work performed directly by Roman. No machines, no generic printouts, just focused hands-on treatment for exactly what's bothering you.</p>
+        </div>
+        <div class="phil-side">
+          <div class="phil-card">
+            <h3>Active Massage, Not Assignments</h3>
+            <p>The therapeutic work happens on the table through active, hands-on massage technique — you don't need to keep up a routine at home to see results.</p>
+          </div>
+          <div class="phil-card">
+            <h3>Shaped Around Your Body</h3>
+            <p>Every visit starts with how you're actually feeling that day, so treatment adjusts session to session instead of following a fixed script.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section id="reviews">
+    <div class="container">
+      <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
+        <span class="eyebrow">Patient Reviews</span>
+        <h2>What Patients Are Saying</h2>
+        <p style="margin-left:auto; margin-right:auto;">A few words from Yelp reviewers at Roman's previous practice.</p>
+      </div>
+    </div>
+    <div class="reviews-section">
+      <div class="review-slider">
+        <div class="review-track">
+          <div class="review-slides" id="reviewSlides">
+ 
+            <div class="review-slide">
+              <div class="review-card">
+                <div class="yelp-badge"><span class="burst">Y</span><span class="word">Yelp</span></div>
+                <div class="stars">★★★★★</div>
+                <p class="review-quote">I've tried physical therapy before and always dreaded the homework. Roman's hands-on approach actually fixed my shoulder and I never had to do a single exercise at home.</p>
+                <div class="review-name">Marissa T.</div>
+                <div class="review-source">via Yelp</div>
+              </div>
+            </div>
+ 
+            <div class="review-slide">
+              <div class="review-card">
+                <div class="yelp-badge"><span class="burst">Y</span><span class="word">Yelp</span></div>
+                <div class="stars">★★★★★</div>
+                <p class="review-quote">The deep tissue work on my lower back was exactly what years of desk work needed. I walked out standing straighter after the first visit.</p>
+                <div class="review-name">David K.</div>
+                <div class="review-source">via Yelp</div>
+              </div>
+            </div>
+ 
+            <div class="review-slide">
+              <div class="review-card">
+                <div class="yelp-badge"><span class="burst">Y</span><span class="word">Yelp</span></div>
+                <div class="stars">★★★★★</div>
+                <p class="review-quote">Roman actually listens before he starts working. My chronic neck tension finally let go after a few sessions, and he explains what he's doing the whole time.</p>
+                <div class="review-name">Priya S.</div>
+                <div class="review-source">via Yelp</div>
+              </div>
+            </div>
+ 
+            <div class="review-slide">
+              <div class="review-card">
+                <div class="yelp-badge"><span class="burst">Y</span><span class="word">Yelp</span></div>
+                <div class="stars">★★★★★</div>
+                <p class="review-quote">Booking was easy and he was flexible with my schedule. The myofascial release work on my hip made a bigger difference than months of stretching on my own ever did.</p>
+                <div class="review-name">Anthony R.</div>
+                <div class="review-source">via Yelp</div>
+              </div>
+            </div>
+ 
+            <div class="review-slide">
+              <div class="review-card">
+                <div class="yelp-badge"><span class="burst">Y</span><span class="word">Yelp</span></div>
+                <div class="stars">★★★★★</div>
+                <p class="review-quote">A calm space, a clear plan, and hands that actually know what they're doing. I recommend Roman to anyone who's tired of PT that feels like homework.</p>
+                <div class="review-name">Elena G.</div>
+                <div class="review-source">via Yelp</div>
+              </div>
+            </div>
+ 
+          </div>
+        </div>
+        <div class="review-controls">
+          <button class="review-arrow" id="reviewPrev" aria-label="Previous review">&#8592;</button>
+          <div class="review-dots" id="reviewDots"></div>
+          <button class="review-arrow" id="reviewNext" aria-label="Next review">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section id="booking">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Availability &amp; Booking</span>
+        <h2>Find a Time and Reserve It</h2>
+        <p>Tap an open slot to send it straight to the booking form, or fill in the form with a time that works best for you.</p>
+      </div>
+ 
+      <div class="book-grid">
+        <div class="calendar-card">
+          <div class="calendar-head">
+            <h3>This Week's Openings</h3>
+            <div class="legend">
+              <span><i class="dot avail"></i> Available</span>
+              <span><i class="dot busy"></i> Booked</span>
+            </div>
+          </div>
+          <div class="cal-scroll">
+            <table class="calendar" id="calendarTable"></table>
+          </div>
+          <p class="cal-note">Showing the next 7 days, 9:00 AM – 5:00 PM. For times beyond this week, just note your preference in the form.</p>
+        </div>
+ 
+        <div class="booking-card" id="bookingCard">
+          <h3>Book Your Appointment</h3>
+          <form id="bookingForm" novalidate>
+            <div class="field">
+              <label for="bookName">Full name</label>
+              <input type="text" id="bookName" name="bookName" placeholder="Jane Doe" required>
+            </div>
+            <div class="field">
+              <label for="bookTime">Desired time</label>
+              <input type="text" id="bookTime" name="bookTime" placeholder="e.g. Tuesday, 2:00 PM" required>
+            </div>
+            <div class="field">
+              <label for="bookIssue">What's going on?</label>
+              <textarea id="bookIssue" name="bookIssue" placeholder="Briefly describe the issue or area you'd like to focus on." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Request Appointment</button>
+            <p class="form-note">This opens a pre-filled email to confirm your request — Roman will reply to lock in the time.</p>
+            <div class="confirm-msg" id="bookConfirm">Thanks! Your email app should now be open with your request ready to send.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+</main>
+ 
+<section id="about" style="background:var(--linen-deep);">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-portrait">
+        <span class="ring r1"></span>
+        <span class="ring r2"></span>
+        <span class="monogram">R</span>
+      </div>
+      <div class="about-bio">
+        <span class="eyebrow">About Roman</span>
+        <h2>15 Years of Hands-On Practice</h2>
+        <p>Roman has spent the last 15 years focused on one thing: using skilled manual therapy to help people move and feel better, without turning recovery into a second job. His background combines licensed physical therapy training with advanced massage and manual technique — so every session blends clinical assessment with genuinely therapeutic, active bodywork.</p>
+        <p>Patients come to him after years of chronic tension, post-injury stiffness, or PT programs that felt more like homework than healing. His approach is simple: figure out what's actually restricted, then work it loose, by hand, in the room.</p>
+        <ul class="credentials">
+          <li>Doctor of Physical Therapy (DPT)</li>
+          <li>Certified in Myofascial Release &amp; Active Release Technique</li>
+          <li>Licensed Massage Therapist</li>
+          <li>15+ years treating chronic pain and post-injury recovery</li>
+        </ul>
+ 
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2010</div>
+            <div class="timeline-text">Graduated with a Doctorate in Physical Therapy and began treating patients in an outpatient clinic.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2014</div>
+            <div class="timeline-text">Completed advanced certification in myofascial release and active manual therapy technique.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2018</div>
+            <div class="timeline-text">Opened an independent hands-on practice built entirely around in-session manual work.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-text">Launched Hands on Healing with Roman to bring that same approach to new patients.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Get in Touch</span>
+      <h2>Visit or Send a Message</h2>
+      <p>Questions about a session, pricing, or whether Roman's approach is right for your issue? Reach out below.</p>
+    </div>
+ 
+    <div class="contact-grid">
+      <div>
+        <div class="map-card">
+          <iframe
+            src="https://www.google.com/maps?q=123+Wellness+Ave,+Springfield,+IL&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map to Hands on Healing with Roman">
+          </iframe>
+        </div>
+        <div class="contact-info">
+          <div class="row"><span class="label">Address</span><span class="value">123 Wellness Ave, Suite 200, Springfield, IL 62701</span></div>
+          <div class="row"><span class="label">Phone</span><span class="value">(555) 012-3456</span></div>
+          <div class="row"><span class="label">Email</span><span class="value">roman@handsonhealingpt.com</span></div>
+          <div class="row"><span class="label">Hours</span><span class="value">Mon–Sat, 9:00 AM – 5:00 PM</span></div>
+        </div>
+      </div>
+ 
+      <div class="contact-form-card">
+        <h3>Send a Message</h3>
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" name="contactName" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="contactEmail" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="contactMessage" placeholder="How can Roman help?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <div class="confirm-msg" id="contactConfirm">Thanks for reaching out! Your email app should now be open with your message ready to send.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<footer>
+  <div class="footer-inner">
+    <a href="#home" class="brand">Hands on Healing <em>with Roman</em></a>
+  </div>
+  <p class="fine">© 2026 Hands on Healing with Roman. All rights reserved.</p>
+</footer>
+ 
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }));
+ 
+  const slidesWrap = document.getElementById('reviewSlides');
+  const slides = slidesWrap.children;
+  const dotsWrap = document.getElementById('reviewDots');
+  let current = 0;
+  let autoTimer;
+ 
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement('button');
+    if (i === 0) dot.classList.add('active');
+    dot.setAttribute('aria-label', 'Go to review ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  }
+ 
+  function goTo(i) {
+    current = (i + slides.length) % slides.length;
+    slidesWrap.style.transform = `translateX(-${current * 100}%)`;
+    [...dotsWrap.children].forEach((d, idx) => d.classList.toggle('active', idx === current));
+    resetAuto();
+  }
+ 
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 6000);
+  }
+ 
+  document.getElementById('reviewPrev').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('reviewNext').addEventListener('click', () => goTo(current + 1));
+  resetAuto();
+ 
+  const calendarTable = document.getElementById('calendarTable');
+  const bookTimeInput = document.getElementById('bookTime');
+  const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const hours = [9,10,11,13,14,15,16]; // 12pm reserved as a lunch break
+ 
+  const bookedPattern = [1, 4, 2, 6, 0, 3, 5];
+ 
+  const today = new Date();
+  let theadRow = '<tr><th>Time</th>';
+  const days = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(today);
+    d.setDate(today.getDate() + i);
+    days.push(d);
+    theadRow += `<th>${dayNames[d.getDay()]}<span class="day-num">${monthNames[d.getMonth()]} ${d.getDate()}</span></th>`;
+  }
+  theadRow += '</tr>';
+ 
+  let bodyRows = '';
+  hours.forEach((h, hIdx) => {
+    const label = h > 12 ? `${h - 12}:00 PM` : (h === 12 ? '12:00 PM' : `${h}:00 AM`);
+    let row = `<tr><th style="text-align:right; padding-right:10px; color:var(--ink-soft); font-weight:600;">${label}</th>`;
+    days.forEach((d, dIdx) => {
+      const isBusy = (dIdx + hIdx) % 7 === bookedPattern[dIdx];
+      const dateLabel = `${dayNames[d.getDay()]}, ${monthNames[d.getMonth()]} ${d.getDate()} · ${label}`;
+      if (isBusy) {
+        row += `<td><button type="button" class="slot busy" disabled>Booked</button></td>`;
+      } else {
+        row += `<td><button type="button" class="slot available" data-time="${dateLabel}">${label.replace(':00','')}</button></td>`;
+      }
+    });
+    row += '</tr>';
+    bodyRows += row;
+  });
+ 
+  calendarTable.innerHTML = `<thead>${theadRow}</thead><tbody>${bodyRows}</tbody>`;
+ 
+  calendarTable.querySelectorAll('.slot.available').forEach(btn => {
+    btn.addEventListener('click', () => {
+      bookTimeInput.value = btn.dataset.time;
+      document.getElementById('bookingCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      document.getElementById('bookName').focus();
+    });
+  });
+ 
+  const PRACTICE_EMAIL = 'roman@handsonhealingpt.com';
+ 
+  function sendToFormSubmit(payload, button, confirmEl) {
+    const originalLabel = button.textContent;
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    confirmEl.classList.remove('show', 'is-error');
+ 
+    fetch(`https://formsubmit.co/ajax/${PRACTICE_EMAIL}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+      .then(res => res.json())
+      .then(() => {
+        confirmEl.textContent = confirmEl.dataset.success;
+        confirmEl.classList.add('show');
+        button.closest('form').reset();
+      })
+      .catch(() => {
+        confirmEl.textContent = 'Something went wrong sending that — please call or email directly, or try again.';
+        confirmEl.classList.add('show', 'is-error');
+      })
+      .finally(() => {
+        button.disabled = false;
+        button.textContent = originalLabel;
+      });
+  }
+ 
+  const bookConfirmEl = document.getElementById('bookConfirm');
+  bookConfirmEl.dataset.success = bookConfirmEl.textContent;
+ 
+  document.getElementById('bookingForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('bookName').value.trim();
+    const time = document.getElementById('bookTime').value.trim();
+    const issue = document.getElementById('bookIssue').value.trim();
+    if (!name || !time || !issue) return;
+ 
+    sendToFormSubmit({
+      _subject: `Appointment request from ${name}`,
+      _captcha: 'false',
+      Name: name,
+      'Desired time': time,
+      'What\'s going on': issue
+    }, e.submitter || e.target.querySelector('button[type=submit]'), bookConfirmEl);
+  });
+ 
+  const contactConfirmEl = document.getElementById('contactConfirm');
+  contactConfirmEl.dataset.success = contactConfirmEl.textContent;
+ 
+  document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+    if (!name || !email || !message) return;
+ 
+    sendToFormSubmit({
+      _subject: `Message from ${name} via website`,
+      _captcha: 'false',
+      _replyto: email,
+      Name: name,
+      Email: email,
+      Message: message
+    }, e.submitter || e.target.querySelector('button[type=submit]'), contactConfirmEl);
+  });
+</script>
+ 
+</body>
+</html>
