@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="keywords" content="physical therapy, healing, los angeles">
+<meta name="keywords" content="physical therapy, los angeles, massage">
 <title>Hands on Healing with Roman | Manual Physical Therapy</title>
 <meta name="description" content="Hands-on physical therapy and active massage therapy with Roman. Skilled manual work that relieves pain and restores movement — no take-home exercise routines required.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
     --sky-pale:#DCE7EC;
     --sage:#8CA282;
     --sage-deep:#5D7053;
-    --sand:#C9B594;
+    --sand:#dcdbda;
     --ink:#2A2E2C;
     --ink-soft:#59645F;
     --yelp-red:#D32323;
@@ -111,16 +111,18 @@
   .brand{
     font-family:var(--serif); font-weight:600; font-size:1.28rem; color:var(--white);
     text-decoration:none; letter-spacing:0.2px;
+    flex-shrink:0;
   }
   .brand em{ font-style: italic; font-weight:500; color:var(--sky-pale);}
+  .nav-right{ display:flex; align-items:center; gap:36px; margin-left:auto; }
   .nav-links{ display:flex; align-items:center; gap:32px; list-style:none; margin:0; padding:0; }
   .nav-links a{ text-decoration:none; color:var(--sky-pale); font-weight:600; font-size:0.96rem; }
   .nav-links a:hover{ color:var(--white); }
-  .nav-cta{ display:flex; align-items:center; gap:20px; }
   .menu-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
   .menu-toggle span{ display:block; width:24px; height:2px; background:var(--white); margin:5px 0; border-radius:2px; }
  
   @media (max-width: 860px){
+    .nav-right{ gap:14px; }
     .nav-links{
       position:absolute; top:100%; left:0; right:0;
       background:var(--white);
@@ -133,7 +135,6 @@
     .nav-links a{ color: var(--sky-deep); }
     .nav-links a:hover{ color: var(--sage-deep); }
     .menu-toggle{ display:block; }
-    .nav-cta .btn-primary{ display:none; }
   }
  
   .hero{
@@ -166,6 +167,36 @@
   .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; }
   .hero-art{
     animation: rise 1.1s ease both;
+    position: relative;
+    padding: 24px;
+  }
+  .hero-art::before{
+    content:"";
+    position:absolute; inset: 0;
+    border-radius:50%;
+    border: 1.5px solid rgba(140,162,130,0.4);
+    transform: scale(0.94);
+  }
+  .hero-art::after{
+    content:"";
+    position:absolute; inset: 0;
+    border-radius:50%;
+    background: var(--sky-pale);
+    opacity:0.4;
+    transform: scale(1.06);
+    z-index:-1;
+  }
+  .hero-photo{
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow:hidden;
+    border: 6px solid var(--white);
+    box-shadow: var(--shadow);
+    background: var(--linen-deep);
+  }
+  .hero-photo img{
+    width:100%; height:100%;
+    object-fit: cover;
   }
   @keyframes rise{
     from{ opacity:0; transform: translateY(18px) scale(0.98); }
@@ -178,34 +209,12 @@
     .hero-art{ order:-1; max-width:340px; margin:0 auto;}
   }
  
-  .marquee-wrap{
+  .philosophy-section{
     background: var(--linen-deep);
+    margin-top: 60px;
     border-top: 1px solid rgba(60,92,112,0.12);
     border-bottom: 1px solid rgba(60,92,112,0.12);
-    padding: 20px 0;
-    overflow:hidden;
-    margin-top: 30px;
   }
-  .marquee{
-    display:flex;
-    gap:48px;
-    white-space:nowrap;
-    animation: scroll-left 32s linear infinite;
-    width:max-content;
-  }
-  .marquee-wrap:hover .marquee{ animation-play-state: paused; }
-  @keyframes scroll-left{
-    from{ transform: translateX(0); }
-    to{ transform: translateX(-50%); }
-  }
-  .marquee span{
-    color: var(--sky-deep);
-    font-family:var(--serif);
-    font-style:italic;
-    font-size:1.15rem;
-    font-weight:600;
-  }
-  .marquee span::after{ content:"•"; margin-left:48px; color: var(--sage); font-style:normal;}
  
   .section-head{ max-width:640px; margin-bottom:52px; }
   .section-head .eyebrow{ margin-bottom:14px; }
@@ -257,49 +266,58 @@
   .review-card{
     background: var(--white);
     border-radius: var(--radius-md);
-    padding:34px 38px;
+    padding:32px 36px;
     box-shadow: var(--shadow);
-    text-align:center;
-    border:1px solid #E7E1D8;
+    text-align:left;
+    border:1px solid #E2DCD0;
+    border-top: 4px solid var(--yelp-red);
     position:relative;
   }
-  .yelp-badge{
+  .review-top{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:16px;
+  }
+  .reviewer{ display:flex; align-items:center; gap:12px; }
+  .reviewer .avatar{
+    width:42px; height:42px;
+    border-radius:50%;
+    background: var(--sky-pale);
+    color:var(--sky-deep);
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:1.1rem;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .review-name{ font-weight:700; color:var(--ink); font-size:0.98rem; }
+  .review-location{ font-size:0.82rem; color:var(--ink-soft); }
+  .yelp-chip{
     display:inline-flex;
     align-items:center;
-    gap:8px;
-    background: var(--white);
-    border:1.5px solid var(--yelp-red);
-    border-radius:999px;
-    padding:5px 14px 5px 6px;
-    margin-bottom:18px;
-  }
-  .yelp-badge .burst{
-    width:22px; height:22px;
+    gap:5px;
     background: var(--yelp-red);
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
     color:var(--white);
-    font-size:0.75rem;
     font-weight:800;
-    font-family: Georgia, serif;
-  }
-  .yelp-badge .word{
-    font-weight:800;
-    font-size:0.95rem;
-    color:var(--yelp-red-dark);
+    font-size:0.82rem;
     font-family: Georgia, serif;
     font-style:italic;
-    letter-spacing:0.2px;
+    padding:5px 12px;
+    border-radius:6px;
+    flex-shrink:0;
   }
-  .stars{ color:var(--yelp-red); font-size:1.2rem; letter-spacing:3px; margin-bottom:14px;}
+  .yelp-chip .burst{ font-style:normal; font-size:0.78rem; }
+  .stars{ color:var(--yelp-red); font-size:1.15rem; letter-spacing:2px; margin-bottom:14px;}
   .review-quote{
-    font-family:var(--serif);
-    font-style:italic;
-    font-size:1.2rem;
+    font-family:var(--sans);
+    font-style:normal;
+    font-size:1.02rem;
+    line-height:1.65;
     color:var(--ink);
-    margin-bottom:20px;
+    margin-bottom:0;
   }
-  .review-name{ font-weight:700; color:var(--sky-deep); }
   .review-source{ font-size:0.85rem; color:var(--ink-soft); }
   .review-controls{
     display:flex; align-items:center; justify-content:center; gap:22px;
@@ -495,7 +513,8 @@
   }
   .footer-inner{
     max-width:1180px; margin:0 auto;
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;
+    display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:18px;
+    text-align:center;
   }
   .footer-inner .brand{ color:var(--white); }
   .footer-inner .brand em{ color: var(--sage); }
@@ -509,12 +528,12 @@
 <header>
   <nav>
     <a href="#home" class="brand">Hands on Healing <em>with Roman</em></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-cta">
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
       <a href="#booking" class="btn btn-primary btn-sm">Book a Session</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -528,52 +547,36 @@
   <section class="hero">
     <div class="hero-copy">
       <span class="eyebrow">Manual Physical Therapy &amp; Massage</span>
-      <h1>Hands-On Healing, No Homework Required</h1>
-      <p class="lede">Roman treats pain and restricted movement with skilled, active hands-on work — deep tissue technique, myofascial release, and manual therapy done entirely on the table. You leave feeling better. No exercise sheets to take home.</p>
+      <h1>Hands-On Healing, No Work Required</h1>
+      <p class="lede">Roman treats pain and restricted movement with skilled, active hands-on work. You leave feeling better. No exercise sheets to take home.</p>
       <div class="hero-ctas">
         <a href="#booking" class="btn btn-primary">Book a Session</a>
         <a href="#about" class="btn btn-ghost">Meet Roman</a>
       </div>
     </div>
-    <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="240" cy="240" r="230" fill="var(--sky-pale)" opacity="0.5"/>
-        <circle cx="240" cy="240" r="180" fill="none" stroke="var(--sage)" stroke-width="1.5" opacity="0.55"/>
-        <circle cx="240" cy="240" r="130" fill="none" stroke="var(--sky)" stroke-width="1.5" opacity="0.55"/>
-        <g transform="translate(240,255)">
-          <ellipse cx="0" cy="30" rx="58" ry="66" fill="var(--white)" stroke="var(--sky-deep)" stroke-width="3"/>
-          <g fill="var(--white)" stroke="var(--sky-deep)" stroke-width="3" stroke-linecap="round">
-            <rect x="-52" y="-46" width="20" height="70" rx="10" transform="rotate(-18 -42 -11)"/>
-            <rect x="-26" y="-72" width="20" height="86" rx="10" transform="rotate(-6 -16 -29)"/>
-            <rect x="2" y="-78" width="20" height="90" rx="10"/>
-            <rect x="30" y="-68" width="20" height="80" rx="10" transform="rotate(9 40 -28)"/>
-            <rect x="54" y="-38" width="18" height="58" rx="9" transform="rotate(28 63 -9)"/>
-          </g>
-          <ellipse cx="0" cy="30" rx="58" ry="66" fill="none" stroke="var(--sky-deep)" stroke-width="3"/>
-        </g>
-        <circle cx="90" cy="110" r="7" fill="var(--sage)"/>
-        <circle cx="400" cy="140" r="5" fill="var(--sand)"/>
-        <circle cx="380" cy="360" r="8" fill="var(--sky)"/>
-      </svg>
+    <div class="hero-art">
+      <div class="hero-photo">
+        <img src="images/hero-photo.jpg" alt="Roman providing hands-on physical therapy treatment">
+      </div>
     </div>
   </section>
  
-  <section id="philosophy">
+  <section id="philosophy" class="philosophy-section">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">How It Works</span>
         <h2>A Different Kind of Physical Therapy</h2>
-        <p>Most PT plans hand you a folder of exercises. Roman's approach puts the work into his hands, not your evenings — so healing happens during the session, not after it.</p>
+        <p>Most PT plans hand you a folder of exercises. Roman's approach puts the work into his hands. Healing happens during the session, not after it.</p>
       </div>
       <div class="philosophy-grid">
         <div class="phil-main">
           <h3>Hands-On, From Start to Finish</h3>
-          <p>Every session is skilled manual therapy — active, targeted massage and joint work performed directly by Roman. No machines, no generic printouts, just focused hands-on treatment for exactly what's bothering you.</p>
+          <p>Every session is skilled manual therapy, targeted massage, and joint work performed directly by Roman. No machines, no generic printouts, just focused hands-on treatment for exactly what's bothering you.</p>
         </div>
         <div class="phil-side">
           <div class="phil-card">
             <h3>Active Massage, Not Assignments</h3>
-            <p>The therapeutic work happens on the table through active, hands-on massage technique — you don't need to keep up a routine at home to see results.</p>
+            <p>The therapeutic work happens on the table through active, hands-on massage technique. You don't need to keep up a routine at home to see results.</p>
           </div>
           <div class="phil-card">
             <h3>Shaped Around Your Body</h3>
@@ -599,54 +602,89 @@
  
             <div class="review-slide">
               <div class="review-card">
-                <div class="yelp-badge"><span class="burst">Y</span><span class="word">Yelp</span></div>
+                <div class="review-top">
+                  <div class="reviewer">
+                    <span class="avatar">C</span>
+                    <div>
+                      <div class="review-name">Craig B.</div>
+                      <div class="review-location">San Fernando Valley, CA</div>
+                    </div>
+                  </div>
+                  <span class="yelp-chip"><span class="burst">★</span>Yelp</span>
+                </div>
                 <div class="stars">★★★★★</div>
-                <p class="review-quote">I've tried physical therapy before and always dreaded the homework. Roman's hands-on approach actually fixed my shoulder and I never had to do a single exercise at home.</p>
-                <div class="review-name">Marissa T.</div>
-                <div class="review-source">via Yelp</div>
+                <p class="review-quote">Roman has been doing an amazing job and giving me great advice on improving my back. Pat and Tyler have also been so helpful. A great team!</p>
               </div>
             </div>
  
             <div class="review-slide">
               <div class="review-card">
-                <div class="yelp-badge"><span class="burst">Y</span><span class="word">Yelp</span></div>
+                <div class="review-top">
+                  <div class="reviewer">
+                    <span class="avatar">G</span>
+                    <div>
+                      <div class="review-name">Gloria D.</div>
+                      <div class="review-location">Moreno Valley, CA</div>
+                    </div>
+                  </div>
+                  <span class="yelp-chip"><span class="burst">★</span>Yelp</span>
+                </div>
                 <div class="stars">★★★★★</div>
-                <p class="review-quote">The deep tissue work on my lower back was exactly what years of desk work needed. I walked out standing straighter after the first visit.</p>
-                <div class="review-name">David K.</div>
-                <div class="review-source">via Yelp</div>
+                <p class="review-quote">Roman was great! I felt so much better after one session. Dr. Tri gave me some exercises that really helped.</p>
               </div>
             </div>
  
             <div class="review-slide">
               <div class="review-card">
-                <div class="yelp-badge"><span class="burst">Y</span><span class="word">Yelp</span></div>
+                <div class="review-top">
+                  <div class="reviewer">
+                    <span class="avatar">N</span>
+                    <div>
+                      <div class="review-name">Nevare G.</div>
+                      <div class="review-location">Glendale, CA</div>
+                    </div>
+                  </div>
+                  <span class="yelp-chip"><span class="burst">★</span>Yelp</span>
+                </div>
                 <div class="stars">★★★★★</div>
-                <p class="review-quote">Roman actually listens before he starts working. My chronic neck tension finally let go after a few sessions, and he explains what he's doing the whole time.</p>
-                <div class="review-name">Priya S.</div>
-                <div class="review-source">via Yelp</div>
+                <p class="review-quote">I can't say enough good things about Roman. He is an excellent Doctor of Physical Therapy, and I'm incredibly grateful for his care with my moderate to severe lumbar stenosis and joint arthropathy at L4-L5. He takes his time, communicates clearly, and is very knowledgeable. His targeted therapy and trigger point work have brought relief much faster than I ever expected and restored my hope in healing. Roman is reassuring, encouraging, and truly cares about his patients. You can physically feel that he knows exactly what he's doing--how to relieve pressure and strengthen the right areas. He's also friendly and enjoyable to talk to, which makes each session comfortable and positive. I highly recommend Roman for anyone needing physical therapy. Nevare G.</p>
               </div>
             </div>
  
             <div class="review-slide">
               <div class="review-card">
-                <div class="yelp-badge"><span class="burst">Y</span><span class="word">Yelp</span></div>
+                <div class="review-top">
+                  <div class="reviewer">
+                    <span class="avatar">S</span>
+                    <div>
+                      <div class="review-name">Sarah N.</div>
+                      <div class="review-location">San Fernando Valley, CA</div>
+                    </div>
+                  </div>
+                  <span class="yelp-chip"><span class="burst">★</span>Yelp</span>
+                </div>
                 <div class="stars">★★★★★</div>
-                <p class="review-quote">Booking was easy and he was flexible with my schedule. The myofascial release work on my hip made a bigger difference than months of stretching on my own ever did.</p>
-                <div class="review-name">Anthony R.</div>
-                <div class="review-source">via Yelp</div>
+                <p class="review-quote">The Physical Therapist I worked with was Roman, and he is OUTSTANDING! He knows so much about the body, provides the best solutions for healing and is a master of massage work. He did different massage techniques around the muscles in my broken ankle, and it helped relive my pain so quickly. I will be forever grateful I found Roman. He is a healer and if you get with him, you will absolutely be healed and regain strength more swiftly than you can imagine. 5+ stars all the way!</p>
               </div>
             </div>
- 
+         <!--
             <div class="review-slide">
               <div class="review-card">
-                <div class="yelp-badge"><span class="burst">Y</span><span class="word">Yelp</span></div>
+                <div class="review-top">
+                  <div class="reviewer">
+                    <span class="avatar">E</span>
+                    <div>
+                      <div class="review-name">Elena G.</div>
+                      <div class="review-location">San Jose, CA</div>
+                    </div>
+                  </div>
+                  <span class="yelp-chip"><span class="burst">★</span>Yelp</span>
+                </div>
                 <div class="stars">★★★★★</div>
                 <p class="review-quote">A calm space, a clear plan, and hands that actually know what they're doing. I recommend Roman to anyone who's tired of PT that feels like homework.</p>
-                <div class="review-name">Elena G.</div>
-                <div class="review-source">via Yelp</div>
               </div>
             </div>
- 
+           -->
           </div>
         </div>
         <div class="review-controls">
@@ -686,7 +724,7 @@
           <form id="bookingForm" novalidate>
             <div class="field">
               <label for="bookName">Full name</label>
-              <input type="text" id="bookName" name="bookName" placeholder="Jane Doe" required>
+              <input type="text" id="bookName" name="bookName" placeholder="Your name" required>
             </div>
             <div class="field">
               <label for="bookTime">Desired time</label>
@@ -694,11 +732,11 @@
             </div>
             <div class="field">
               <label for="bookIssue">What's going on?</label>
-              <textarea id="bookIssue" name="bookIssue" placeholder="Briefly describe the issue or area you'd like to focus on." required></textarea>
+              <textarea id="bookIssue" name="bookIssue" placeholder="Describe the area you'd like to focus on." required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Request Appointment</button>
-            <p class="form-note">This opens a pre-filled email to confirm your request — Roman will reply to lock in the time.</p>
-            <div class="confirm-msg" id="bookConfirm">Thanks! Your email app should now be open with your request ready to send.</div>
+            <p class="form-note">This opens a pre-filled email to confirm your request.</p>
+            <div class="confirm-msg" id="bookConfirm">Thank you! Your email app should now be open with your request ready to send.</div>
           </form>
         </div>
       </div>
@@ -717,9 +755,9 @@
       </div>
       <div class="about-bio">
         <span class="eyebrow">About Roman</span>
-        <h2>Doctor of Physical Therapy</h2>
-        <p>Roman has spent many years focused on one thing: using skilled manual therapy to help people move and feel better, without turning recovery into a second job. His background combines licensed physical therapy training with advanced massage and manual technique.</p>
-        <p>Patients come to him after years of chronic tension, post-injury stiffness, or PT programs that felt more like homework than healing. His approach is simple: figure out what's actually restricted, then work it loose, by hand, in the room.</p>
+        <h2>Over 5 Years of Hands-On Practice</h2>
+        <p>Roman has spent the last 5 years using skilled manual therapy to help people move and feel better, without turning recovery into a second job. His background combines licensed physical therapy training with advanced massage and manual technique.</p>
+        <p>Patients come to him after years of chronic tension, post-injury stiffness, or PT programs that can be overbearing.</p>
         <ul class="credentials">
           <li>Doctor of Physical Therapy (DPT)</li>
           <li>Certified in ...</li>
@@ -729,12 +767,12 @@
  
         <div class="timeline">
           <div class="timeline-item">
-            <div class="timeline-year">2022</div>
+            <div class="timeline-year">2021</div>
             <div class="timeline-text">Graduated with a Doctorate in Physical Therapy and began treating patients in an outpatient clinic.</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-year">2024</div>
-            <div class="timeline-text">Timeline feature #2.</div>
+            <div class="timeline-year">2023</div>
+            <div class="timeline-text">Started working as a physical therapist hands-on practice built entirely around in-session manual work.</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-year">2026</div>
@@ -751,7 +789,7 @@
     <div class="section-head">
       <span class="eyebrow">Get in Touch</span>
       <h2>Visit or Send a Message</h2>
-      <p>Questions about a session, pricing, or our approach? Reach out below.</p>
+      <p>Contact us with any questions about a session, pricing, or whether our approach.</p>
     </div>
  
     <div class="contact-grid">
@@ -781,14 +819,14 @@
           </div>
           <div class="field">
             <label for="contactEmail">Email</label>
-            <input type="email" id="contactEmail" name="contactEmail" placeholder="you@example.com" required>
+            <input type="email" id="contactEmail" name="contactEmail" placeholder="youremail@example.com" required>
           </div>
           <div class="field">
             <label for="contactMessage">Message</label>
             <textarea id="contactMessage" name="contactMessage" placeholder="What do you need help with?" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Send Message</button>
-          <div class="confirm-msg" id="contactConfirm">Thanks for reaching out! Your email should now be open with your message ready to send.</div>
+          <div class="confirm-msg" id="contactConfirm">Thanks for reaching out! Your email app should now be open with your message ready to send.</div>
         </form>
       </div>
     </div>
@@ -890,7 +928,7 @@
     });
   });
  
-  const PRACTICE_EMAIL = 'roman@handsonhealingpt.com';
+  const PRACTICE_EMAIL = 'romaninitaly@gmail.com';
  
   function sendToFormSubmit(payload, button, confirmEl) {
     const originalLabel = button.textContent;
